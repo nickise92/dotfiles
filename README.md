@@ -21,7 +21,7 @@ configurations present in the video series will be documented here to keep the c
 - [X] fzflua    -- File finder
 - [X] which-key
 - [X] project.nvim          -- Detects the root directory of projects
-- [ ] LSP    -- Language Server Protocol
+- [X] LSP    -- Language Server Protocol
 - [ ] blink-cmp
 - [ ] snacks.indent
 - [ ] conform.nvim
