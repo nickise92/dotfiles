@@ -22,9 +22,9 @@ configurations present in the video series will be documented here to keep the c
 - [X] which-key
 - [X] project.nvim          -- Detects the root directory of projects
 - [X] LSP    -- Language Server Protocol
+- [X] conform.nvim
 - [ ] blink-cmp
 - [ ] snacks.indent
-- [ ] conform.nvim
 
 ## Keymaps
 
@@ -73,6 +73,25 @@ Source: Wikipedia, find more [here](https://en.wikipedia.org/wiki/Language_Serve
 - [X] CSS: cssls, cssmodules_ls
 - [X] Bash: bashls
 - [X] JavaScript & TypeScript: ts_ls
+
+## Conform - Code Formatter
+
+About the `php-cs-fixer` formatter for PHP, this fix was added from [reddit](https://www.reddit.com/r/neovim/comments/18a77w2/good_lintingformatting_configuration_for_php_in/#:~:text=%2D%2Dformatters%2Elua,true%2C%20%7D%2C%20%7D).
+
+```lua
+formatters = {
+      ["php-cs-fixer"] = {
+        command = "php-cs-fixer",
+        args = {
+          "fix",
+          "--rules=@PSR12", -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+          "$FILENAME",
+        },
+        stdin = false,
+      },
+    },
+    notify_on_error = true,
+```
 
 
 ## About Showkeys
