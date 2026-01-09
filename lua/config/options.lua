@@ -1,3 +1,69 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+-- Set to true if Nerd Font is installed and selected in the terminal
+vim.g.have_nerd_font = true
+
+-- Set line number default
+vim.o.number = true
+vim.o.relativenumber = true -- Shows relative number to current lines instead of fixed ones
+
+-- Highlight line under cursor
+vim.o.cursorline = true
+
+-- Set the tabs and indentation spaces default
+vim.o.expandtab = true 	-- Convert tabs to spaces
+vim.o.shiftwidth = 4 	-- Amount of indent with << and >>
+vim.o.tabstop = 4 	-- How many spces are shown per Tab
+vim.o.softtabstop = 4 	-- How many spaces are applied when pressing Tab
+vim.o.smarttab = true
+vim.o.smartindent = true
+vim.o.autoindent = true -- Keep indentation from previous line
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Enable mouse mode, useful for resizing splits
+vim.o.mouse = 'a'
+
+-- Show don't show mode. Can be turned off, the mode it's already in the status line
+vim.o.showmode = false
+
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
+ 
+-- Configure how new splits should be opened
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+-- Save undo history between sessions
+vim.o.undofile = true
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+--
+--  Notice listchars is set using `vim.opt` instead of `vim.o`.
+--  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
+--   See `:help lua-options`
+--   and `:help lua-options-guide`
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 15
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.o.confirm = true
+
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Keep signcolumn on by default
+vim.o.signcolumn = "yes"
+
+

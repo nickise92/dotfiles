@@ -1,3 +1,7 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- Open Lazy.nvim panel
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Open Lazy floating panel" }) 
+-- Open the File Explorer (Oil)
+vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { desc= "Open parent directory in Oil" })
+-- Go to LSP diagnostic
+vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, 
+    { desc = "Open Diagnostic in Float" })
