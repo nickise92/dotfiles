@@ -24,3 +24,4 @@ vim.keymap.set("n", "<leader>tc", "<cmd>VimtexCompile<CR>", { desc = "La[T]eX [C
 vim.keymap.set("n", "<leader>tv", "<cmd>VimtexView<CR>", { desc = "La[T]eX [V]iew PDF" })
 vim.keymap.set("n", "<leader>ts", "<cmd>VimtexStop<CR>", { desc = "La[T]eX [S]top Compilation" })
 vim.keymap.set("n", "<leader>te", "<cmd>VimtexErrors<CR>", { desc = "La[T]eX show [E]rrors" })
+vim.keymap.set("n", "<leader>tx", "<cmd>VimtexClean<CR>", { desc = "La[T]eX clean failed compilation files" })

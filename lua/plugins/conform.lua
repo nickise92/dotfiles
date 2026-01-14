@@ -10,6 +10,7 @@ return {
             javascript = { "prettierd", "prettier", stop_after_first = true },
             typescript = { "prettierd", "prettier", stop_after_first = true },
             php = { "php-cs-fixer" },
+            tex = { "latexindent" },
         },
         format_on_save = {
             -- These options will be passed to conform.format()
