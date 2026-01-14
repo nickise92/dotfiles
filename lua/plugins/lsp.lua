@@ -190,7 +190,8 @@ return {
         --  By default, Neovim doesn't support everything that is in the LSP specification.
         --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
         --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
-        -- local capabilities = require('blink.cmp').get_lsp_capabilities()
+        local original_capabilities = vim.lsp.protocol.make_client_capabilities()
+        local capabilities = require("blink.cmp").get_lsp_capabilities(original_capabilities)
 
         -- Enable the following language servers
         --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -202,8 +203,9 @@ return {
         --  - settings (table): Override the default settings passed when initializing the server.
         --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         local servers = {
-            -- Bash
+            -- Bash / PowerShell .ps1
             bashls = {},
+            powershell_es = {},
             -- Markdown
             marksman = {},
             -- C, C++
@@ -219,6 +221,9 @@ return {
             cssmodules_ls = {},
             -- Json
             jsonls = {},
+            -- SQL / Postgres
+            postgres_lsp = {},
+
             -- rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             --
@@ -267,6 +272,7 @@ return {
             "php-cs-fixer", -- Formatter for PHP files
             "isort", -- Formatter for Python
             "black", -- Formatter for Python
+            "pgformatter", -- Formatter for Postgres and SQL
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

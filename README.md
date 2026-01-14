@@ -22,9 +22,27 @@ configurations present in the video series will be documented here to keep the c
 - [X] which-key
 - [X] project.nvim          -- Detects the root directory of projects
 - [X] LSP    -- Language Server Protocol
-- [X] conform.nvim
-- [ ] blink-cmp
-- [ ] snacks.indent
+- [X] conform.nvim  -- Formatter for Programming Languages
+- [X] blink-cmp     -- Autocompletion: path, code, etc.
+- [X] noice.nvim    -- Popup command line
+
+### Markdown 
+
+- [X] live-preview
+- [X] render-markdown
+
+### LaTeX
+
+- [X] vimtex
+
+Only configuration changed in the `vimtex.lua` file is the viewer, because the default *Zathura* is not available on Windows, so we can fallback on *SumatraPDF*.
+
+#### Specific LaTeX Keymaps
+
+- Compile LaTeX file: `<leader>tc`
+- Stop compiling: `<leader>ts`
+- Open SumatraPDF for preview: `<leader>tv`
+- Show/Close errors/warnings after compiling end: `<leader>te`
 
 ## Keymaps
 
@@ -32,7 +50,6 @@ This section is about custom keymappings that can be find either in plugins lua 
 
 - Opening Lazy.nvim dialog: `<leader>l`
 - Opening File Explorer (default Oil.nvim): `-`
-- ...
 
 ## Treesitter config
 ### Treesitter fix for Markdown files
