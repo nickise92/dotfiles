@@ -1,4 +1,5 @@
 {
+  "LuaSnip": { "branch": "master", "commit": "5a1e39223db9a0498024a77b8441169d260c8c25" },
   "blink.cmp": { "branch": "main", "commit": "b19413d214068f316c78978b08264ed1c41830ec" },
   "conform.nvim": { "branch": "master", "commit": "238f542a118984a88124fc915d5b981680418707" },
   "css-vars.nvim": { "branch": "main", "commit": "0615782c320f729b04d9c51a8a61fb498ee4234a" },
@@ -6,6 +7,7 @@
   "fidget.nvim": { "branch": "main", "commit": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "fzf-lua": { "branch": "main", "commit": "578a11f9f7c5f4436b833731ccceeda9479562f0" },
+  "gruvbox": { "branch": "main", "commit": "2895bc4e4773bcd01f12b9bd146ac780ae86e3ea" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "live-preview.nvim": { "branch": "main", "commit": "5f517e80c1ca734a2bd6ace2115b36c51464f7e9" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "80c0130c5f16b551865a69e832f1feadeedb5fbe" },

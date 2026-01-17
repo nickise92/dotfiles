@@ -1,7 +1,7 @@
 return {
     "saghen/blink.cmp",
     -- optional: provides snippets for the snippet source
-    dependencies = { "rafamadriz/friendly-snippets", "jdrupal-dev/css-vars.nvim" },
+    dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip", "jdrupal-dev/css-vars.nvim" },
 
     -- use a release tag to download pre-built binaries
     version = "1.*",
@@ -27,6 +27,8 @@ return {
         -- See :h blink-cmp-config-keymap for defining your own keymap
         keymap = { preset = "default" },
 
+        snippets = { preset = "luasnip" },
+
         appearance = {
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
             -- Adjusts spacing to ensure icons are aligned
@@ -40,7 +42,7 @@ return {
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         -- [NOTE]: Remove "buffer" if don't needed autocompletion from all token (word) inside the buffer.
         sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
+            default = { "lsp", "path", "snippets" },
             providers = {
                 css_vars = {
                     name = "css-vars",

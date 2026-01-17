@@ -8,11 +8,15 @@ vim.o.relativenumber = true -- Shows relative number to current lines instead of
 -- Highlight line under cursor
 vim.o.cursorline = true
 
+-- Highiliht column 90
+vim.opt.colorcolumn = 90
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#cc241d" })
+
 -- Set the tabs and indentation spaces default
-vim.o.expandtab = true 	-- Convert tabs to spaces
-vim.o.shiftwidth = 4 	-- Amount of indent with << and >>
-vim.o.tabstop = 4 	-- How many spces are shown per Tab
-vim.o.softtabstop = 4 	-- How many spaces are applied when pressing Tab
+vim.o.expandtab = true -- Convert tabs to spaces
+vim.o.shiftwidth = 4 -- Amount of indent with << and >>
+vim.o.tabstop = 4 -- How many spces are shown per Tab
+vim.o.softtabstop = 4 -- How many spaces are applied when pressing Tab
 vim.o.smarttab = true
 vim.o.smartindent = true
 vim.o.autoindent = true -- Keep indentation from previous line
@@ -20,7 +24,7 @@ vim.o.autoindent = true -- Keep indentation from previous line
 vim.o.breakindent = true
 
 -- Enable mouse mode, useful for resizing splits
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- Show don't show mode. Can be turned off, the mode it's already in the status line
 vim.o.showmode = false
@@ -30,9 +34,9 @@ vim.o.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+    vim.o.clipboard = "unnamedplus"
 end)
- 
+
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
@@ -49,7 +53,7 @@ vim.o.undofile = true
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 15
@@ -65,5 +69,3 @@ vim.o.smartcase = true
 
 -- Keep signcolumn on by default
 vim.o.signcolumn = "yes"
-
-
