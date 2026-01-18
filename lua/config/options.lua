@@ -9,7 +9,7 @@ vim.o.relativenumber = true -- Shows relative number to current lines instead of
 vim.o.cursorline = true
 
 -- Highiliht column 90
-vim.opt.colorcolumn = 90
+vim.opt.colorcolumn = "90"
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#cc241d" })
 
 -- Set the tabs and indentation spaces default
