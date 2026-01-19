@@ -10,6 +10,12 @@ return {
         -- OPTIONAL:
         --   `nvim-notify` is only needed, if you want to use the notification view.
         --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
+        {
+            "rcarriga/nvim-notify",
+            opts = {
+                -- Fix Background Highlight Group for nvim-notify
+                background_colour = "#1c1c1c",
+            },
+        },
     },
 }

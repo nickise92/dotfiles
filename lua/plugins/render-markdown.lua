@@ -5,5 +5,13 @@ return {
     ---@type render.md.UserConfig
     opts = {
         render_modes = { "n", "c", "t" },
+        code = {
+            -- Remove red background on code-blocks
+            highlight = "Normal",
+            style = "full",
+            left_pad = 2,
+            right_pad = 2,
+            border = thin,
+        },
     },
 }

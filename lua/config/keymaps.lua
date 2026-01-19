@@ -33,3 +33,7 @@ vim.keymap.set("n", "<leader>tv", "<cmd>VimtexView<CR>", { desc = "La[T]eX [V]ie
 vim.keymap.set("n", "<leader>ts", "<cmd>VimtexStop<CR>", { desc = "La[T]eX [S]top Compilation" })
 vim.keymap.set("n", "<leader>te", "<cmd>VimtexErrors<CR>", { desc = "La[T]eX show [E]rrors" })
 vim.keymap.set("n", "<leader>tx", "<cmd>VimtexClean<CR>", { desc = "La[T]eX clean failed compilation files" })
+
+-- Multi lines indentation / de-indentation with Tab and Shift+Tab (VSCode like)
+vim.keymap.set("v", "<Tab>", ">gv", { desc = "Indent selection" })
+vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "De-Indent selection" })
