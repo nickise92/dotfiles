@@ -1,11 +1,11 @@
 -- Change between light and dark colorscheme
-vim.keymap.set("n", "<leader>uil", function()
-    vim.cmd("colorscheme gruvbox-light")
-end, { desc = "Switch to [UI] theme [L]ight" })
-vim.keymap.set("n", "<leader>uid", function()
-    vim.cmd("colorscheme gruvbox-hard")
-end, { desc = "Switch to [UI] theme [D]ark" })
-
+-- vim.keymap.set("n", "<leader>uil", function()
+--     vim.cmd("colorscheme gruvbox-light")
+-- end, { desc = "Switch to [UI] theme [L]ight" })
+-- vim.keymap.set("n", "<leader>uid", function()
+--     vim.cmd("colorscheme gruvbox-hard")
+-- end, { desc = "Switch to [UI] theme [D]ark" })
+--
 -- Open Lazy.nvim panel
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Open Lazy floating panel" })
 -- Open the File Explorer (Oil)
