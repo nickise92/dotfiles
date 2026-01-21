@@ -213,7 +213,18 @@ return {
             -- Python
             pyright = {},
             -- PHP
-            phpactor = {},
+            -- phpactor = {},
+            intelephense = {
+                settings = {
+                    intelephense = {
+                        files = {
+                            maxSize = 5000000,
+                        },
+                        -- TODO Environment with path to Joomla libraries
+                        -- environment = {},
+                    },
+                },
+            },
             -- JavaScript / TypeScript
             ts_ls = {},
             -- CSS
@@ -270,7 +281,8 @@ return {
             "stylua", -- Used to format Lua code
             "prettierd", -- Used to format JavaScript and TypeScript
             "prettier", -- Fallback formatter for JavaScript and TypeScript
-            "php-cs-fixer", -- Formatter for PHP files
+            -- "php-cs-fixer", -- Formatter for PHP files
+            "pint", -- Formatter for PHP
             "isort", -- Formatter for Python
             "black", -- Formatter for Python
             "pgformatter", -- Formatter for Postgres and SQL

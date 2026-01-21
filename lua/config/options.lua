@@ -10,7 +10,7 @@ vim.o.cursorline = true
 
 -- Highiliht column 90
 vim.opt.colorcolumn = "90"
-vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#cc241d" })
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#bdfe58" })
 
 -- Set the tabs and indentation spaces default
 vim.o.expandtab = true -- Convert tabs to spaces
@@ -18,8 +18,9 @@ vim.o.shiftwidth = 4 -- Amount of indent with << and >>
 vim.o.tabstop = 4 -- How many spces are shown per Tab
 vim.o.softtabstop = 4 -- How many spaces are applied when pressing Tab
 vim.o.smarttab = true
-vim.o.smartindent = true
+-- vim.o.smartindent = true
 vim.o.autoindent = true -- Keep indentation from previous line
+vim.opt.autoindent = true
 -- Enable break indent
 vim.o.breakindent = true
 

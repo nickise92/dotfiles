@@ -25,6 +25,8 @@ configurations present in the video series will be documented here to keep the c
 - [X] conform.nvim  -- Formatter for Programming Languages
 - [X] blink-cmp     -- Autocompletion: path, code, etc.
 - [X] noice.nvim    -- Popup command line
+- [X] autopairs.nvim -- Auto-matching brackets
+- [X] inline-edit.vim -- Open new buffers to edit inline block
 
 ### Markdown 
 

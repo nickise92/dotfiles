@@ -17,9 +17,10 @@ end, { desc = "Open Diagnostic in Float" })
 -- Code format shortcut
 vim.keymap.set("n", "<leader>cf", function()
     require("conform").format({
+        async = true,
         lsp_format = "fallback",
     })
-end, { desc = "Format current file" })
+end, { desc = "Format current file (async)" })
 -- Start live-preview for markdown document
 vim.keymap.set("n", "<leader>ms", "<cmd>LivePreview start<CR>", { desc = "Start live preview for markdown file" })
 -- Close live-preview for markdown document
