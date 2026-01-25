@@ -210,6 +210,20 @@ return {
             marksman = {},
             -- C, C++
             clangd = {},
+            -- C#
+            omnisharp = {
+                settings = {
+                    FormattingOptions = {
+                        -- Enable support for .editorconfig files
+                        EnableEditorConfigSupport = true,
+                    },
+                    RoslynExtensionsOptions = {
+                        -- Enable import completion and decompilation support
+                        EnableImportCompletion = true,
+                        EnableDecompilationSupport = true,
+                    },
+                },
+            },
             -- Python
             pyright = {},
             -- PHP
@@ -286,6 +300,7 @@ return {
             "isort", -- Formatter for Python
             "black", -- Formatter for Python
             "pgformatter", -- Formatter for Postgres and SQL
+            "csharpier", -- Formatter for C#
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

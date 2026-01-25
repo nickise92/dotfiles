@@ -68,6 +68,6 @@ return {
             },
         })
 
-        vim.cmd("colorscheme darkvoid")
+        -- vim.cmd("colorscheme darkvoid")
     end,
 }

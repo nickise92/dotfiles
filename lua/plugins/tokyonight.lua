@@ -26,6 +26,6 @@ return {
                 hl["@markup.list.checked.markdown"] = { fg = c.green1, bold = true }
             end,
         })
-        --        vim.cmd("colorscheme tokyonight")
+        vim.cmd("colorscheme tokyonight")
     end,
 }

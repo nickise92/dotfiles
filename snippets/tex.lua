@@ -66,9 +66,9 @@ return {
 
     -- Inline Math ($ .. $)
     s({ trig = "mk", snippetType = "autosnippet", wordTrig = true }, {
-        t("$ "),
+        t("$"),
         i(1),
-        t(" $"),
+        t("$"),
         i(0),
     }),
 
@@ -87,18 +87,29 @@ return {
         i(0),
     }),
 
+    -- Autosnippet to set <= to \le and >= to \ge
+    s({ trig = "<=", snippetType = "autosnippet" }, {
+        t("\\le"),
+    }, { condition = is_math }),
+
+    s({ trig = ">=", snippetType = "autosnippet" }, {
+        t("\\ge"),
+    }, { condition = is_math }),
+
     -- Function f(x)
-    s({ trig = "fx", snippetType = "autosnippet" }, {
-        t({ "f(" }),
+    s({ trig = "func", snippetType = "autosnippet" }, {
         i(1),
+        t({ "(" }),
+        i(2),
         t({ ")" }),
         i(0),
     }, { condition = is_math }),
 
     -- Derivate f'(x)
-    s({ trig = "f'x", snippetType = "autosnippet" }, {
-        t({ "f'(" }),
+    s({ trig = "deriv", snippetType = "autosnippet" }, {
         i(1),
+        t({ "'(" }),
+        i(2),
         t({ ")" }),
         i(0),
     }, { condition = is_math }),
@@ -108,6 +119,22 @@ return {
         t({ "\\left(" }),
         i(1),
         t({ "\\right)" }),
+        i(0),
+    }, { condition = is_math }),
+
+    -- Autosnippet for sin and cos
+    s({ trig = "cos", snippetType = "autosnippet" }, {
+        t({ "\\cos" }),
+        i(0),
+    }, { condition = is_math }),
+
+    s({ trig = "sin", snippetType = "autosnippet" }, {
+        t({ "\\sin" }),
+        i(0),
+    }, { condition = is_math }),
+
+    s({ trig = "tan", snippetType = "autosnippet" }, {
+        t({ "\\tan" }),
         i(0),
     }, { condition = is_math }),
 
