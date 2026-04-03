@@ -244,6 +244,7 @@ return {
             -- CSS
             cssls = {},
             cssmodules_ls = {},
+            tailwindcss = {},
             -- Json
             jsonls = {},
             -- SQL / Postgres
@@ -259,7 +260,6 @@ return {
             -- But for many setups, the LSP (`ts_ls`) will work just fine
             -- ts_ls = {},
             --
-
             lua_ls = {
                 -- cmd = { ... },
                 -- filetypes = { ... },

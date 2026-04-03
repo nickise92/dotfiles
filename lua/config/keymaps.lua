@@ -38,3 +38,75 @@ vim.keymap.set("n", "<leader>tx", "<cmd>VimtexClean<CR>", { desc = "La[T]eX clea
 -- Multi lines indentation / de-indentation with Tab and Shift+Tab (VSCode like)
 vim.keymap.set("v", "<Tab>", ">gv", { desc = "Indent selection" })
 vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "De-Indent selection" })
+
+-- Java keybindings
+-- Build & Workspace
+vim.keymap.set(
+    "n",
+    "<leader>jbbw",
+    "<cmd>JavaBuildBuildWorkspace<CR>",
+    { desc = "Run the [J]ava[B]uildBuild[W]orkspace command" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>jbcw",
+    "<cmd>JavaBuildCleanWorkspace<CR>",
+    { desc = "Run the [J]ava[B]uild[C]lean[W]orkspace command" }
+)
+
+-- Run program
+vim.keymap.set("n", "<leader>jrm", "<cmd>JavaRunnerRunMain<CR>", { desc = "Run command: [J]avaRunner[R]un[M]ain" })
+vim.keymap.set("n", "<leader>jsm", "<cmd>JavaRunnerStopMain", { desc = "Run command: [J]avaRunner[S]top[M]ain" })
+
+-- Open a new Tab into the current directory (LUA version)
+vim.keymap.set("n", "<leader>bt", function()
+    local current_file_dir = vim.fn.expand("%:p:h")
+
+    -- 1. Crea la nuova Tab
+    vim.cmd("tabnew")
+
+    -- 2. Cambia la directory locale (solo per questa tab)
+    if current_file_dir ~= "" and vim.fn.isdirectory(current_file_dir) == 1 then
+        pcall(function()
+            vim.cmd("lcd " .. vim.fn.fnameescape(current_file_dir))
+        end)
+    end
+
+    -- 3. Apri la ricerca file con fzf-lua
+    require("fzf-lua").files()
+end, { desc = "[B]uffer [T]ab on current directory" })
+
+-- Open a new Vertical Split into the current directory
+vim.keymap.set("n", "<leader>bv", function()
+    local current_file_dir = vim.fn.expand("%:p:h")
+
+    vim.cmd("vsplit")
+
+    -- Controlla se la directory è valida e non è un buffer speciale
+    if current_file_dir ~= "" and vim.fn.isdirectory(current_file_dir) == 1 then
+        pcall(function()
+            vim.cmd("lcd " .. vim.fn.fnameescape(current_file_dir))
+        end)
+    end
+
+    require("fzf-lua").files()
+end, { desc = "[B]uffer [V]Split in current directory" }) -- Open a new Horizontal Split into the current directory
+
+vim.keymap.set("n", "<leader>bh", function()
+    local current_file_dir = vim.fn.expand("%:p:h")
+
+    vim.cmd("split")
+
+    if current_file_dir ~= "" and vim.fn.isdirectory(current_file_dir) == 1 then
+        pcall(function()
+            vim.cmd("lcd " .. vim.fn.fnameescape(current_file_dir))
+        end)
+    end
+
+    require("fzf-lua").files()
+end, { desc = "[B]uffer [H]orizontal Split in current directory" })
+
+-- Open a new buffer nella directory corrente
+vim.keymap.set("n", "<leader>bn", function()
+    require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") })
+end, { desc = "[B]uffer [N]ew: Open a new buffer in current directory" })

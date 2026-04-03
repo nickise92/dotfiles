@@ -46,6 +46,10 @@ Only configuration changed in the `vimtex.lua` file is the viewer, because the d
 - Open SumatraPDF for preview: `<leader>tv`
 - Show/Close errors/warnings after compiling end: `<leader>te`
 
+## AI Chat/Tools
+
+- [ ] codecompanion.nvim -- TODO!
+
 ## Keymaps
 
 This section is about custom keymappings that can be find either in plugins lua file or in [keymaps.lua](.\lua\config\keymaps.lua).

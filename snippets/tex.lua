@@ -72,17 +72,31 @@ return {
         i(0),
     }),
 
-    -- Display Math (\[ .. \])
+    -- Display Math with no justification env (just \[ .. \])
     s({ trig = "dm", snippetType = "autosnippet", wordTrig = true }, {
         t({ "\\[", "\t" }),
-        i(1, "\\begin{"),
-        i(2, "gathered"),
-        t({ "}", "\t" }),
-        i(3),
+        i(1),
+        t({ "", "\\]" }),
+        i(0),
+    }),
+    -- Display Math (\[ .. \]) with gathered env inside
+    s({ trig = "dg", snippetType = "autosnippet", wordTrig = true }, {
+        t({ "\\[", "\t" }),
+        t("\\begin{gathered}", "\t"),
+        i(1),
         t({ "", "\t" }),
-        i(4, "\\end{"),
-        i(5, "gathered"),
-        t({ "}" }),
+        t("\\end{gathered}"),
+        t({ "", "\\]" }),
+        i(0),
+    }),
+
+    -- Display Math with aligned env inside
+    s({ trig = "dam", snippetType = "autosnippet", wordTrig = true }, {
+        t({ "\\[", "\t" }),
+        t("\\begin{aligned}", "\t"),
+        i(1),
+        t({ "", "\t" }),
+        t("\\end{aligned}"),
         t({ "", "\\]" }),
         i(0),
     }),
@@ -264,4 +278,32 @@ return {
         t("} "),
         i(0),
     }, { condition = is_math }),
+
+    -- Snippet to create a function graph
+    s({ trig = "plot", snippetType = "autosnippet" }, {
+        t({
+            "\\begin{center}",
+            "\\begin{tikzpicture}",
+            "\t\\begin{axis}[",
+            "\t\taxis lines = middle,",
+            "\t\tgrid = major,",
+            "\t\twidth=10cm, height=7cm,",
+            "\t\t",
+        }),
+        t("xlabel = {$"),
+        i(1, "x"),
+        t("$},"),
+        t({ "", "\t\tylabel = {$" }),
+        i(2, "f(x)"),
+        t("$},"),
+        t({ "", "\t\tdomain = " }),
+        i(3, "-5:5"),
+        t(","),
+        t({ "", "\t\tsamples = 100,", "\t]", "" }),
+        t("\t\t\\addplot [red, thick] {"),
+        i(4, "x^2"),
+        t("};"),
+        t({ "", "\t\\end{axis}", "\\end{tikzpicture}", "\\end{center}" }),
+        i(0),
+    }),
 }

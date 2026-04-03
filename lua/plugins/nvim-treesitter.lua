@@ -17,6 +17,7 @@ return {
                 "typescript",
                 "c",
                 "python",
+                "java",
             },
 
             highlight = {
