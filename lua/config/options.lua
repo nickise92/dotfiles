@@ -70,3 +70,6 @@ vim.o.smartcase = true
 
 -- Keep signcolumn on by default
 vim.o.signcolumn = "yes"
+
+-- Conceal level required by Obsidian.nvim (1 or 2)
+vim.opt.conceallevel = 2

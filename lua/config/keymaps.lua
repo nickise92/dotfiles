@@ -1,21 +1,12 @@
 -- Change between light and dark colorscheme
 vim.keymap.set("n", "<leader>st", function()
-    -- Recupera il nome del tema attuale
-    -- Usiamo pcall per evitare che nvim si blocchi se un tema non viene trovato
-    local current_scheme = vim.g.colors_name or "tokyonight"
+    local cyber = require("cyberdream")
+    -- Execute Cyberdream native command
+    vim.cmd("CyberdreamToggleMode")
 
-    if current_scheme:find("tokyonight") then
-        local ok, _ = pcall(vim.cmd, "colorscheme catppuccin-latte")
-        if not ok then
-            print("Errore: Tema Catppuccin non trovato. Controlla l'installazione.")
-        else
-            print("Tema Chiaro: Catppuccin Latte")
-        end
-    else
-        vim.cmd("colorscheme tokyonight")
-        print("Tema Scuro: Tokyonight")
-    end
-end, { desc = "Cambia tra Tokyonight e Catppuccin" })
+    -- Optional: print a feedback
+    print("Theme switched Light/Dark")
+end, { desc = "Toggle Cyberdream Light/Dark" })
 
 -- Open Lazy.nvim panel
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Open Lazy floating panel" })
@@ -121,3 +112,25 @@ end, { desc = "[B]uffer [H]orizontal Split in current directory" })
 vim.keymap.set("n", "<leader>bn", function()
     require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") })
 end, { desc = "[B]uffer [N]ew: Open a new buffer in current directory" })
+
+--- OBSIDIAN ---
+vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "[O]bsidian [N]ew note: create a new note" })
+vim.keymap.set(
+    "n",
+    "<leader>os",
+    "<cmd>ObsidianSearch<CR>",
+    { desc = "[O]bsidian [S]earch: search text in all the notes" }
+)
+vim.keymap.set("n", "<leader>od", "<cmd>ObsidianToday<CR>", { desc = "[O]bsidian [T]oday: go to daily note" })
+vim.keymap.set(
+    "v",
+    "<leader>ol",
+    "<cmd>ObsidianLink<CR>",
+    { desc = "[O]bsidian [L]ink: create a link from selected text" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>oo",
+    "<cmd>ObsidianOpen<CR>",
+    { desc = "[O]bsidian [O]pen: open current note in Obsidian GUI" }
+)
