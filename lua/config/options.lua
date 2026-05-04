@@ -10,7 +10,7 @@ vim.o.cursorline = true
 
 -- Highiliht column 90
 vim.opt.colorcolumn = "90"
-vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#bdfe58" })
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#122334" })
 
 -- Set the tabs and indentation spaces default
 vim.o.expandtab = true -- Convert tabs to spaces

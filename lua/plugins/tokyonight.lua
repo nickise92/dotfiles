@@ -7,7 +7,7 @@ return {
             style = "night",
             light_style = "day",
             terminal_colors = true,
-            transparent = true, -- set to true if you want transparency
+            transparent = false, -- set to true if you want transparency
             cache = true, -- better performance
 
             -- Adding better highlighting for markdown files
@@ -26,6 +26,6 @@ return {
                 hl["@markup.list.checked.markdown"] = { fg = c.green1, bold = true }
             end,
         })
-        vim.cmd("colorscheme tokyonight")
+        -- vim.cmd("colorscheme tokyonight")
     end,
 }

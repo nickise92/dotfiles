@@ -18,6 +18,7 @@ return {
                 "c",
                 "python",
                 "java",
+                "r",
             },
 
             highlight = {

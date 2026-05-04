@@ -1,11 +1,22 @@
 -- Change between light and dark colorscheme
--- vim.keymap.set("n", "<leader>uil", function()
---     vim.cmd("colorscheme gruvbox-light")
--- end, { desc = "Switch to [UI] theme [L]ight" })
--- vim.keymap.set("n", "<leader>uid", function()
---     vim.cmd("colorscheme gruvbox-hard")
--- end, { desc = "Switch to [UI] theme [D]ark" })
---
+vim.keymap.set("n", "<leader>st", function()
+    -- Recupera il nome del tema attuale
+    -- Usiamo pcall per evitare che nvim si blocchi se un tema non viene trovato
+    local current_scheme = vim.g.colors_name or "tokyonight"
+
+    if current_scheme:find("tokyonight") then
+        local ok, _ = pcall(vim.cmd, "colorscheme catppuccin-latte")
+        if not ok then
+            print("Errore: Tema Catppuccin non trovato. Controlla l'installazione.")
+        else
+            print("Tema Chiaro: Catppuccin Latte")
+        end
+    else
+        vim.cmd("colorscheme tokyonight")
+        print("Tema Scuro: Tokyonight")
+    end
+end, { desc = "Cambia tra Tokyonight e Catppuccin" })
+
 -- Open Lazy.nvim panel
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Open Lazy floating panel" })
 -- Open the File Explorer (Oil)
@@ -56,7 +67,7 @@ vim.keymap.set(
 
 -- Run program
 vim.keymap.set("n", "<leader>jrm", "<cmd>JavaRunnerRunMain<CR>", { desc = "Run command: [J]avaRunner[R]un[M]ain" })
-vim.keymap.set("n", "<leader>jsm", "<cmd>JavaRunnerStopMain", { desc = "Run command: [J]avaRunner[S]top[M]ain" })
+vim.keymap.set("n", "<leader>jsm", "<cmd>JavaRunnerStopMain<CR>", { desc = "Run command: [J]avaRunner[S]top[M]ain" })
 
 -- Open a new Tab into the current directory (LUA version)
 vim.keymap.set("n", "<leader>bt", function()
